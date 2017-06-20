@@ -1,0 +1,15 @@
+#/etc/filebeat/filebeat.yml
+#----------------------------- Logstash output --------------------------------
+output.logstash:
+ protocol: https
+ # The Logstash hosts
+ hosts: ["LogTelemetry-ELB-834276217.us-west-2.elb.amazonaws.com:5044"]
+ tls:
+    certificate_authorities: [ "/etc/filebeat/546533380337-usev-prod-secops-log.medallia.com.crt" ]
+ # Optional SSL. By default is off.
+ # List of root certificates for HTTPS server verifications
+ #ssl.certificate_authorities: ["/etc/pki/root/ca.pem"]
+ # Certificate for SSL client authentication
+ #ssl.certificate: "/etc/pki/client/cert.pem"
+ # Client Certificate Key
+ #ssl.key: "/etc/pki/client/cert.key"
